@@ -4,7 +4,7 @@ import cv2
 
 layout = [
     [sg.Image(key = '-IMAGE-')],
-    [sg.Text('Amount of people in picture: 0', key='-TEXT-', expand_x=True, justification='c')]
+    [sg.Text('Number of people in picture: 0', key='-TEXT-', expand_x=True, justification='c')]
 ]
 
 window = sg.Window('Face Detector', layout)
@@ -29,7 +29,7 @@ while True:
 
     imgbytes = cv2.imencode('.png', frame)[1].tobytes()
     window['-IMAGE-'].update(data = imgbytes)
-    window['-TEXT-'].update(f'Amount of people in picture: {len(faces)}')#Updates the number of peoplein img
+    window['-TEXT-'].update(f'Number of people in picture: {len(faces)}')#Updates the number of peoplein img
 
 
 window.close()
